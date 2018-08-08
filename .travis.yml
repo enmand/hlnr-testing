@@ -2,6 +2,10 @@ sudo: required
 services:
 - docker
 dist: trusty
+jobs:
+  include:
+  - stage: test
+    script: make docker
 notifications:
   email:
     on_failure: change
@@ -15,4 +19,7 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-
+env:
+  global:
+  - secure: UPHL+SeRPbvqI1/Ii1z3IEdSjrwITiv60eRRmEXCG+fFIijUfndGNrfMdmp18j/HdXCelnBySgPKEUEKHZ8QWv8O8PhAAedplMFkCcn4rVCABQfui06HtS3MHt+NLtJnrqGM7abYr2LR7FKrE1x0lU54ksln7hfdtahNsTCuopwdXUakC+FcME8GgrIFaAK6Fl5fO+oMLPFC8ALycxi576DufUJLqGON6HS8QE6BwEl7FegiX283H4P24QG0inuL+Q4E7i8E4ry1ZipqSIfm7BISaaO39cW3gdGTPZ1G8AzW04ngiRjlofUflViTxA4E06CwPE23pedaSXkSIBR4piA67TvID/X8AARwJG2uoIGJvPGiKjJ/z5nViIhhQIncafbEbW3gg/2r0uIO/iAHh18+4cpRchSbOH5145Ell82cxKUobIFGu0aIkBEFPmhhnxXy6M8P6uHoM7xaDlChgIuoSqTu8xYijjWA1qoMlBsinYGbkAYF3VHVs+riUCTGfDK/7GU/STG9uOY+sHE8hqsuRun0wq9FK6KpI2NyfjqUOxd8xZPWEXZ2fDcIODcUfVlOxFKfpPHN3LB6YASRF/faWzDlTV7IIPDF7Yf4VBpl70WBsxp79khiE6lsTtbkWeRiWX4mewGC3ZquQ1e734jo2FP+jgTwoBmIf3uWZ7U=
+  - secure: LE7Zak+F/A6NSYfwmDEZlNXSY8av8FV8kYRza/WHue5UED7xElzk/rgWfyp+EeHEX8s7aHE9GdUqU3ZSXBfjP4EI/PqgJYTbvWtRMJbbYBg2gspOciJLt+w9OfRHdwFJfnWBrtQ/riSukGog3nvDiv4f6ibOLM7gGVDHkLajbNEjgvZGTL/HyGbx5GYtcbaL4wXWoK+YyiyZXLF/jIYbFD9Mo/3KFAohPvKE47vU9kpLszFndVmqadi2Gh9xoriqFxeHJJ68HaVeROnbUEeQAkuydN39WyJC7jrvZMxiwbeOkkkkLimHatX0MNO0Y6m0EgpvT92BEkfb083s9ELtMur4qi3We4AwbL/fHpTEN3X1WMopDzuS+FfyYRZ+5vbkD61K/oSR5yxcy/F7TE1tVKWRBLzq/0IO8CapaLaLqiGpwV1NVHDwjuQgUM7FP9qQYZblcWNHfqbPk4mSE60binolzmrtl05ihGwduT+s6UZzCyaKHXV91rdVX8Cl0kpgjdnH8WaK2+m10VPnxgHeekV1hw/f2IcE5FrK7hpv0eZnIb4JTDTzDN+285U7hcfIjrqFBRr6/FrE8utFv46ADgpD455QqIYsqrtOPDIikRhMFhM9cYjVFwCm0mgZcQOCHLr2oydlsO0dN+yHlBUeboBuwG5PPLyw+GoA+Nlz0k0=
