@@ -29,6 +29,8 @@ docker:
 		--label "org.vcs-branch"="$(VCS_BRANCH)" \
 		.
 
+release: release-docker
+
 release-docker: docker-login docker
 	docker tag arigato/$(NAME) arigato/$(NAME):$(RELEASE_VERSION)
 	docker push arigato/$(NAME):latest
