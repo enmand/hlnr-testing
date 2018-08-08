@@ -24,7 +24,6 @@ docker:
 		--label "org.label-schema.build-date"="$(BUILD_DATE)" \
 		--label "org.label-schema.name"="$(RELEASE_NAME)" \
 		--label "org.label-schema.vcs-ref"="$(VCS_SHA)" \
-		--label "org.label-schema.vendor"="Arigato Machine Inc." \
 		--label "org.label-schema.version"="$(RELEASE_VERSION)" \
 		--label "org.vcs-branch"="$(VCS_BRANCH)" \
 		.
@@ -32,9 +31,9 @@ docker:
 release: release-docker
 
 release-docker: docker-login docker
-	docker tag arigato/$(NAME) arigato/$(NAME):$(RELEASE_VERSION)
-	docker push arigato/$(NAME):latest
-	docker push arigato/$(NAME):$(RELEASE_VERSION)
+	docker tag enmand/$(NAME) enmand/$(NAME):$(RELEASE_VERSION)
+	docker push enmand/$(NAME):latest
+	docker push enmand/$(NAME):$(RELEASE_VERSION)
 
 docker-login:
 	docker login -u="$$DOCKER_USERNAME" -p="$$DOCKER_PASSWORD"
